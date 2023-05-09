@@ -1,0 +1,28 @@
+.productCard {
+    margin: 60px 0;
+    .imgWrap {
+        background-color: #F5F5F5;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100dvh;
+        max-width: 270px;
+        max-height: 250px;
+    }
+
+    .productInfo {
+        .title {
+            padding-top: 16px;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .price {
+            padding-top: 8px;
+            color: #DB4444;
+        }
+    }
+}

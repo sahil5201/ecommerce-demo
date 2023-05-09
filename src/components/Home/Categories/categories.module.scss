@@ -1,0 +1,27 @@
+.listwrap {
+    border-right: 1px solid rgb(100, 100, 100,0.4);
+    padding-top: 40px;
+    max-height: 384px;
+    min-height: 384px;
+    overflow: scroll;
+
+    ul.list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        // max-height: 345px;
+        // max-width: 220px;
+        li {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: start;
+            text-transform: capitalize;
+
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+    }
+}

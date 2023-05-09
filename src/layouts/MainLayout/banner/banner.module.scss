@@ -1,0 +1,21 @@
+.banner {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    max-height: 48px;
+    height: 48px;
+
+    background-color: #000;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #FAFAFA;
+
+    .container {
+        max-width: var(--sub-container-max-width);
+    }
+}

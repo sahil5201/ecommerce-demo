@@ -1,0 +1,24 @@
+.ratingWrap {
+    i {
+        color: #FFAD33;
+        font-size: 14px;
+
+        &:not(:last-child) {
+            margin-right: 5px;
+        }
+    }
+
+    i.emptyRating {
+        color: var(--foreground-color);
+        opacity: 0.25;
+    }
+
+    span {
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 21px;
+        color: var(--foreground-color);
+        opacity: 0.5;
+    }
+}

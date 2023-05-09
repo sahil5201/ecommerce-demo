@@ -1,0 +1,17 @@
+// override styles here
+
+.container {
+    max-width: var(--container-max-width);
+}
+
+.sub-container {
+    max-width: var(--sub-container-max-width);
+}
+
+h1 {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0.04em;
+}
