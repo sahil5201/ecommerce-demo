@@ -7,7 +7,7 @@ export const getProducts = async (numberOfProducts: number | undefined = 5) => {
     return data.data
 }
 
-export const getCategorieProducts = async (categorie: string) => {
-    const data = await axios.get(`https://dummyjson.com/products/category/${categorie}`)
+export const getCategorieProducts = async (categorie: string, numberOfProducts: number | undefined = 5) => {
+    const data = await axios.get(`https://dummyjson.com/products/category/${categorie}?limit=${numberOfProducts}`)
     return data.data
 }

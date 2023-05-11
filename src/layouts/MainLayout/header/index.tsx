@@ -1,15 +1,17 @@
 import React, { Fragment } from 'react'
 import styles from "./header.module.scss"
 import Link from 'next/link'
+import Banner from '../banner'
 
 function Header() {
     return (
-        <Fragment>
+        <div className={styles.headerWrap}>
+            <Banner />
             <div className={styles.header}>
                 <div className={`${styles.container} container`}>
                     <div className="row justify-content-end align-items-center">
                         <div className="col-2">
-                            Logo
+                            <Link href={'/'}>Logo</Link>
                         </div>
                         <nav className="col-8 navbar navbar-expand-lg navbar-light justify-content-center">
                             <ul className="navbar-nav mr-auto">
@@ -23,7 +25,7 @@ function Header() {
                                     <Link className="nav-link" href="/">Contact</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link" href="/">Sign in</Link>
+                                    <Link className="nav-link" href="/">Login</Link>
                                 </li>
                             </ul>
                         </nav>
@@ -43,7 +45,7 @@ function Header() {
                 </div>
             </div>
             <hr className='my-0' />
-        </Fragment>
+        </div>
     )
 }
 

@@ -1,7 +1,21 @@
 import React, { Fragment } from 'react'
-import Banner from './banner'
 import Header from './header'
 import { useSelector } from '@/store'
+import { Inter, Montserrat } from 'next/font/google';
+import Footer from './footer';
+
+// If loading a variable font, you don't need to specify the font weight
+const inter = Inter({
+    subsets: ['latin'],
+    variable: '--font-inter',
+    display: 'swap',
+});
+
+const montserrat = Montserrat({
+    subsets: ['latin'],
+    variable: '--font-montserrat',
+    display: 'swap',
+});
 
 function MainLayout({
     children,
@@ -10,12 +24,14 @@ function MainLayout({
 }) {
     const { themeMode } = useSelector((state) => state.theme)
     return (
-        <html lang="en">
-            <body className={themeMode}>
+        <html lang="en" className={`${inter.variable} ${montserrat.variable}`}>
+            <body className={`${themeMode}`}>
                 <Fragment>
-                    <Banner />
                     <Header />
-                    {children}
+                    <div className='main-area'>
+                        {children}
+                    </div>
+                    <Footer />
                 </Fragment>
             </body>
         </html>

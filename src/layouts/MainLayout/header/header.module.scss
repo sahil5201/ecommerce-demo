@@ -1,9 +1,16 @@
+.headerWrap {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
 .header {
     max-width: var(--sub-container-max-width);
     margin: 0 auto;
     max-height: 100px;
     height: 75px;
-
+    background-color: var(--background-color);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -13,7 +20,7 @@
         max-width: var(--sub-container-max-width);
     }
 
-    a {
+    li > a {
         color: var(--foreground-color);
         position: relative;
 

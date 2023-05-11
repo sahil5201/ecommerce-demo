@@ -1,6 +1,6 @@
 .tag {
     position: relative;
-    color: #DB4444;
+    color: var(--tag-color);
     display: flex;
     align-items: center;
 
@@ -16,9 +16,10 @@
         content: '';
         width: 20px;
         height: 40px;
-        background: #DB4444;
+        background: var(--tag-color);
         display: block;
         border-radius: 4px;
     }
+
     margin-bottom: 24px;
 }

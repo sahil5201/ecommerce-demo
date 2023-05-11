@@ -1,22 +1,22 @@
-import React from 'react'
-import styles from "./sales.module.scss"
 import Products from '@/components/products'
-function Sales() {
+import React from 'react'
+
+function BestSelling() {
     return (
         <div className="col-12">
-            <section className={styles.saleSection}>
+            <section className='my-3'>
                 <div className="tag">
                     <span>
-                        {`Today's`}
+                        {`This Month`}
                     </span>
                 </div>
-                <h1>Flash Sales</h1>
+                <h1>Best Selling Products</h1>
                 <div className="row">
-                    <Products numberOfProducts={4} />
+                    <Products categorie='home-decoration' numberOfProducts={4} />
                 </div>
             </section>
         </div>
     )
 }
 
-export default Sales
+export default BestSelling

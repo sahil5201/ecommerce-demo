@@ -2,10 +2,9 @@ import { Home } from '@/components'
 import React from 'react'
 
 export const metadata = {
-  title: 'Home',
-  description: 'demo e-commerce website using next.js 13.4 by Sahil Patel aka JSDev.',
+  title: 'E-commerce | Home',
+  description: 'E-commerce demo next.js 13.4'
 };
-
 
 function Homeview() {
   return (

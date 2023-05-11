@@ -1,5 +1,4 @@
 @import "~/node_modules/bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 // importing core styling file
 @import "~/node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
@@ -8,18 +7,19 @@
 @import "~/node_modules/@fortawesome/fontawesome-free/scss/regular";
 @import "~/node_modules/@fortawesome/fontawesome-free/scss/solid";
 @import "~/node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "react-loading-skeleton/dist/skeleton.css";
 
 :root {
   --container-max-width: 1400px;
   --sub-container-max-width: 1200px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
+  --min-section-height: 530px;
 
   --primary-color: #1B2430;
   --secondary-color: #fff;
+
+  --tag-color: #03C988;
+  // --tag-color: #03C988;
 
   --foreground-color: var(--primary-color);
   --background-color: var(--secondary-color);
@@ -35,7 +35,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-montserrat);
 }
 
 body.dark {
@@ -50,6 +50,7 @@ body.dark {
 body.light {
   --foreground-color: var(--primary-color);
   --background-color: var(--secondary-color);
+  --tag-color: #533483;
 
   color: var(--foreground-color);
   background: var(--background-color);
@@ -66,7 +67,6 @@ a {
     color: inherit;
   }
 }
-
 
 @media (prefers-color-scheme: dark) {
   body.dark {
@@ -92,3 +92,13 @@ a {
 @import "./scrollbar.scss";
 @import "./override.scss";
 @import "./elements.scss";
+
+.main-area {
+  margin-top: 124px;
+  min-height: calc(100dvh - 463px);
+
+  .main-padding {
+    padding: 80px 0;
+    padding-bottom: 20px;
+  }
+}

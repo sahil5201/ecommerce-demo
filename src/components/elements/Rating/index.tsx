@@ -33,7 +33,7 @@ const Rating = ({ rating, showNumber }: Props) => {
 
         setRatingArr([...fillRatingArr, ...halfRatingArr, ...emptyRatingArr])
         return () => {
-            
+            console.countReset()
         }
     }, [])
 

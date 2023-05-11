@@ -9,9 +9,30 @@
 }
 
 h1 {
+    font-family: var(--font-inter);
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
     line-height: 48px;
     letter-spacing: 0.04em;
+}
+
+.btn-primary {
+    background: var(--tag-color) !important;
+    border-color: var(--tag-color) !important;
+    color: var(--background-color);
+    font-weight: 500;
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-visible {
+        color: var(--background-color);
+    }
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }

@@ -1,34 +1,37 @@
+import React from 'react'
 import { Products } from '@/components'
-import Head from 'next/head'
-import React, { Fragment } from 'react'
 
 interface IParams {
-    params: { id: string }
+    params: {
+        id: string
+    }
 }
 
-// Dynamic metadata
 export async function generateMetadata({ params }: IParams) {
     const { id } = params
     return {
-        title: `Products | ` + id,
-        description: 'Categorie wise Products Listing page.demo e-commerce website using next.js 13.4 by Sahil Patel aka JSDev.',
+        title: 'Products | ' + id,
+        description: 'E-commerce demo next.js 13.4'
     };
 }
 
-function Page({ params }: IParams) {
+function page({ params }: IParams) {
     const { id } = params
     return (
-        <Fragment>
-            <Head>
-                <title>Products</title>
-            </Head>
-            <div className="container sub-container">
-                <div className="row mt-5">
+        <div className='container sub-container main-padding' style={{ minHeight: '1044px' }}>
+            <div className="row">
+                <div className="tag mt-3">
+                    <span>
+                        {`Products`}
+                    </span>
+                </div>
+                <h1 className='text-capitalize'>{id.replace('-', ' ')}</h1>
+                <div className="row mt-3">
                     <Products categorie={id} />
                 </div>
             </div>
-        </Fragment>
+        </div>
     )
 }
 
-export default Page
+export default page;

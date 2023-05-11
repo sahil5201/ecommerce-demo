@@ -3,6 +3,7 @@ import { MainLayout } from '@/layouts'
 import '../styles/globals.scss'
 import { Provider } from 'react-redux'
 import store from '@/store'
+import { Fragment } from 'react';
 
 export default function RootLayout({
   children,
@@ -10,10 +11,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <Provider store={store}>
-      <MainLayout>
-        {children}
-      </MainLayout>
-    </Provider>
+    <Fragment>
+      <Provider store={store}>
+        <MainLayout>
+          {children}
+        </MainLayout>
+      </Provider>
+    </Fragment>
   )
 }

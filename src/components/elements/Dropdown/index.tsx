@@ -10,10 +10,11 @@ interface IDropdown {
   title: string
   items: string[]
   drop?: DropDirection | undefined
+  linkPrefix?: string
 }
 
 function Dropdown(props: IDropdown) {
-  const { title, items, drop } = props
+  const { title, items, drop, linkPrefix } = props
   const { themeMode } = useSelector((state) => state.theme)
   return (
     <BSDropdown drop={drop || 'end'}>
@@ -23,7 +24,7 @@ function Dropdown(props: IDropdown) {
 
       <BSDropdown.Menu variant={themeMode} as={CustomMenu}>
         {items.map((item, index) => (
-          <BSDropdown.Item as={CustomLink} key={index} href={`products/${item}`}>{item}</BSDropdown.Item>
+          <BSDropdown.Item as={CustomLink} key={index} href={`${linkPrefix || ''}/${item}`}>{item}</BSDropdown.Item>
         ))}
       </BSDropdown.Menu>
     </BSDropdown>
@@ -41,9 +42,9 @@ interface ILink {
 const CustomLink = React.forwardRef<ILink, any>((props, ref) => {
   const { children, href, className } = props
   return (<Link className={className} href={href}>{children}</Link>)
-})
+});
 
-CustomLink.displayName = 'CustomLink';
+CustomLink.displayName = 'CustomLink'
 
 interface IProps {
   onClick: React.MouseEventHandler<HTMLAnchorElement>,
@@ -55,7 +56,7 @@ const CustomToggle = React.forwardRef<any>((props, ref) => {
   const { children, onClick, className } = props as IProps
   return (
     <a
-      href=""
+      href="#"
       ref={ref}
       onClick={(e) => {
         e.preventDefault();
@@ -68,8 +69,7 @@ const CustomToggle = React.forwardRef<any>((props, ref) => {
     </a>
   )
 });
-
-CustomToggle.displayName = 'CustomToggle'
+CustomToggle.displayName = 'CustomToggle';
 
 const CustomMenu = React.forwardRef<any>(
   (props, ref) => {
@@ -90,5 +90,4 @@ const CustomMenu = React.forwardRef<any>(
     );
   },
 );
-
-CustomMenu.displayName = 'CustomMenu'
+CustomMenu.displayName = 'CustomMenu';
